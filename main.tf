@@ -12,7 +12,7 @@ resource "aws_eks_cluster" "control_plane" {
   enabled_cluster_log_types = var.cluster_log_types
 
   vpc_config {
-    endpoint_private_access = true
+    endpoint_private_access = false
     endpoint_public_access  = var.endpoint_public_access
     public_access_cidrs     = var.endpoint_public_access_cidrs
     security_group_ids      = concat(aws_security_group.control_plane.*.id, var.security_group_ids)

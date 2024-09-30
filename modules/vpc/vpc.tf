@@ -17,9 +17,8 @@ resource "aws_internet_gateway" "gateway" {
 
 # NAT gateway
 resource "aws_eip" "nat_gateway" {
-  vpc        = true
+  domain     = "vpc"
   depends_on = [aws_internet_gateway.gateway]
-
   tags = {
     Name = "${var.name}-nat-gateway"
   }

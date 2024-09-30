@@ -6,7 +6,7 @@ variable "name" {
 variable "endpoint_public_access" {
   type        = bool
   description = "Indicates whether or not the Amazon EKS public API server endpoint is enabled."
-  default     = false
+  default     = true
 }
 
 variable "endpoint_public_access_cidrs" {
